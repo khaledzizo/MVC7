@@ -1,0 +1,14 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h1>Details</h1>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <partial name="PartialViews/DetailsDeletePV" model="@Model" />
+        <a class="btn btn-warning" asp-action="Update" asp-route-id="@Model.Id.ToString()">Update</a>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id.ToString()">Delete</a>
+        <a class="btn btn-outline-secondary" asp-action="Index">Go Back</a>
+    </form>
+</div>
